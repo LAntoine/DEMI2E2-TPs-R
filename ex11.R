@@ -1,0 +1,9 @@
+rm(list=ls())
+p<-c(2/15,2/15,2/15,1/3,2/15,2/15)
+x<-1:6
+z<-seq(from=0.5,to=6.5,lenght=7)
+y<-sample(x=x,size=1000,replace=TRUE,prob=p)
+h<-hist(y,z,plot=TRUE,freq=TRUE)
+n<-1:1000
+u<-cumsum(y)/n
+plot(n,u,type='l')

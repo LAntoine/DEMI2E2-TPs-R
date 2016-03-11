@@ -1,0 +1,10 @@
+rm(list=ls())
+x<-rnorm(1000)
+h<-hist(x,breaks=50,plot=TRUE,freq=FALSE)
+par(new=TRUE)
+y<-seq(-10,10,length=1000)
+z<-dnorm(y)
+lines(y,z)
+n<-1:1000
+u<-cumsum(x)/n
+plot(n,u,type='l')
