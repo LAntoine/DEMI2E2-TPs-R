@@ -12,11 +12,11 @@ fc_rep_inv<-function(y){
 y<-runif(1000)
 tirage<-fc_rep_inv(y)
 
-h<-hist(tirage,breaks=50,plot=TRUE,freq = FALSE)
+h<-hist(tirage,breaks=50,plot=TRUE,freq = FALSE, ylim = c(0,2), xlim = c(0,2))
 
 par(new=TRUE)
 
-x<-seq(from=0,to=1,length=1000)
+x<-seq(from=0,to=2,length=1000)
 z<-fc_dens(x)
-  
-plot(x,z,type='l')
+
+plot(x,z,type='l', ylim = c(0,2), xlim = c(0,2))
