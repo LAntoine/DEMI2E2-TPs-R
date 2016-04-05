@@ -8,8 +8,7 @@ fc_dens<-function(x){
 #la fonction de densité ne va jamais au dessus de 1.6
 #on utilisera donc une loi uniforme entre 0 et 1
 #je me suis inspiré de l'algorithme de Wikipedia
-#je vais faire la methode de rejet pour une valeur à la fois pour commencer
-#je ne l'ai pas encore testé
+#Cet algo ne fonctionne pas, l'histogramme et la fonction de densité ne se ressemblent pas
 
 fc_methode_rejet<-function(n){
   # f=Ce^x où C=1/(e-1)
@@ -17,7 +16,7 @@ fc_methode_rejet<-function(n){
     y<-runif(n,0,1)
     u<-runif(n,0,1)
     for (i in 1:n){
-      while (u[i]>fc_dens(y[i])/1.6){
+      while (u[i]*1.6>fc_dens(y[i])){
         y[i]<-runif(1,0,1)
         u[i]<-runif(1,0,1)
       }
@@ -25,7 +24,7 @@ fc_methode_rejet<-function(n){
   return (y)
 }
 
-tirage<-fc_methode_rejet(1000)
+tirage<-fc_methode_rejet(10^5)
 
 h<-hist(tirage,breaks=50,plot=TRUE,freq = FALSE)
 
