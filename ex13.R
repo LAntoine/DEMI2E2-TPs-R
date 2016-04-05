@@ -19,4 +19,4 @@ par(new=TRUE)
 x<-seq(from=0,to=2,length=1000)
 z<-fc_dens(x)
 
-plot(x,z,type='l', ylim = c(0,2), xlim = c(0,2))
+plot(x,z,type='l', ylim = c(0,2), xlim = c(0,2), xlab = "", ylab="")
