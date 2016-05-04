@@ -16,4 +16,5 @@ for (a in 1:1000){
   S20j[a]<-S[20]
 }
 plot(1:20,S, ylim = c(0,20),type='l')
-hist(S20j, breaks = 20)
+abscise<-seq(from=0.5,to=20.5, length=21)
+hist(S20j,abscise, freq = TRUE, plot = TRUE)
